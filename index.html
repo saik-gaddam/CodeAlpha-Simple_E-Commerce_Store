@@ -3,24 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CodeAlpha Shop</title>
+    <title>CodeAlpha Electronics Store</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <h1>CodeAlpha E-Commerce</h1>
-        <div id="cart-status">Cart: <span id="cart-count">0</span> items</div>
+        <div id="cart-status" onclick="toggleCart()">
+            Cart: <span id="cart-count">0</span> items
+        </div>
     </header>
 
     <main id="product-list">
-        <!-- Products will be injected here by JS -->
+        <!-- Products will be injected here by JavaScript -->
     </main>
 
-    <section id="cart-modal" class="hidden">
-        <h2>Your Cart</h2>
-        <ul id="cart-items"></ul>
-        <button onclick="processOrder()">Checkout</button>
-        <button onclick="toggleCart()">Close</button>
+    <section id="cart-modal">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <span class="close-cart" onclick="toggleCart()">&times;</span>
+        </div>
+        <div class="cart-content">
+            <ul id="cart-items"></ul>
+        </div>
+        <div class="cart-footer">
+            <div class="total-estimation">Total: <span id="total-amount">₹0</span></div>
+            <button class="checkout-btn" onclick="processOrder()">Checkout</button>
+        </div>
     </section>
 
     <script src="script.js"></script>
